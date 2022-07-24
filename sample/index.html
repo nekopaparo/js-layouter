@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lycoris Recoil</title>
+    <script src="./assets/js/js.layouter.js"></script>
+    <script>
+        var path = window.document.location.href,
+            link = path.split("?")[1];
+                
+        (link === undefined)? Layouter.open("assets/pages/Introduction.html") 
+            : Layouter.open(`assets/pages/${link}.html`);
+    </script>
+</head>
+<body>
+    <p>歡迎使用 / Welcome</p>
+    <p>請使用Visual Studio Code - Go Live 開啟</p>
+    <p>或其他符合CORS(Cross-origin resource sharing)的方式開啟</p>
+</body>
+</html>

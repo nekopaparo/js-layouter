@@ -1,0 +1,32 @@
+{% extends "assets\layout.html" %}
+{% block head %}
+<title>DOMContentLoaded</title>
+<script>
+    window.onload = function ()
+    {
+        let target = document.querySelectorAll('header div div')[2];
+        target.style.background = 'goldenrod';
+        target.style.cursor = 'context-menu';
+        target.onclick = "";
+    };
+</script>
+{% endblock %}
+<body>
+{% block content %}
+<pre><code class="lang-js"><span class="hljs-comment">// document.onload</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.addEventListener)
+{
+    <span class="hljs-built_in">document</span>.addEventListener (<span class="hljs-string">"DOMContentLoaded"</span>, myFunction, <span class="hljs-literal">false</span>);
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.attachEvent) <span class="hljs-comment">// Microsoft</span>
+{
+    <span class="hljs-built_in">document</span>.attachEvent(<span class="hljs-string">"onreadystatechange"</span>, myFunction);
+}
+<span class="hljs-comment">// function</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span>(<span class="hljs-params"></span>)
+</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"DOMContentLoaded sample === $( document ).ready"</span>);
+};
+</code></pre>
+{% endblock %}
+</body>

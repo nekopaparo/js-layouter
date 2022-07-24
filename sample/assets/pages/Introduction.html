@@ -1,0 +1,56 @@
+{% extends "assets\layout.html" %}
+{% block head %}
+<title>介紹</title>
+<script>
+    window.addEventListener ("load", (function () {
+            let target = document.querySelector('.title');
+            target.style.cursor = 'context-menu';
+            target.onclick = "";
+    }), false);
+</script>
+<style>
+    .hljs-name
+    {
+        color: blue;
+    }
+</style>
+{% endblock %}
+<body>
+{% block content %}
+<h1 id="-javascript-">網頁模板套用 (Javascript)</h1>
+<h2 id="use">USE</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./js.layouter.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    Layouter.open(<span class="hljs-string">"./content.html"</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h2 id="base-sample">Base Sample</h2>
+<h3 id="layout-html">layout.html</h3>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"zh-tw"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    </span><span class="hljs-template-tag">{% block&nbsp;head %}</span><span class="xml"> <span class="hljs-comment">&lt;!--head will insert it--&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    </span><span class="hljs-template-tag">{% block&nbsp;content %}</span><span class="xml"> <span class="hljs-comment">&lt;!--content will insert it--&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span>
+</code></pre>
+<h3 id="home-html">content.html</h3>
+<pre><code class="lang-html"><span class="xml"></span><span class="hljs-template-tag">{% extends&nbsp;"layout.html" %}</span><span class="xml">
+</span><span class="hljs-template-tag">{% block&nbsp;head %}</span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-comment">&lt;!--your script--&gt;</span>
+<span class="hljs-comment">&lt;!--your css--&gt;</span>
+</span><span class="hljs-template-tag">{%&nbsp;endblock %}</span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+</span><span class="hljs-template-tag">{% block&nbsp;content %}</span><span class="xml">
+<span class="hljs-comment">&lt;!--your html code--&gt;</span>
+</span><span class="hljs-template-tag">{%&nbsp;endblock %}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span>
+</code></pre>
+{% endblock %}
+</body>

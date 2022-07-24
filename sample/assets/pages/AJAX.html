@@ -1,0 +1,33 @@
+{% extends "assets\layout.html" %}
+{% block head %}
+<title>AJAX</title>
+<script>
+    window.onload = function ()
+    {
+        let target = document.querySelectorAll('header div div')[0];
+        target.style.background = 'goldenrod';
+        target.style.cursor = 'context-menu';
+        target.onclick = "";
+    };
+</script>
+{% endblock %}
+<body>
+{% block content %}
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> xmlHTTP;
+<span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.ActiveXObject)
+{
+    xmlHTTP = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">"Microsoft.XMLHTTP"</span>);
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.XMLHttpRequest) 
+{
+    xmlHTTP = <span class="hljs-keyword">new</span> XMLHttpRequest(); <span class="hljs-comment">// 主要跑這個</span>
+}
+
+xmlHTTP.open(<span class="hljs-string">"GET"</span>, <span class="hljs-built_in">url</span>, <span class="hljs-literal">false</span>);
+
+xmlHTTP.send();
+
+<span class="hljs-comment">// xmlHTTP.status === 200 -&gt; success</span>
+</code></pre>  
+{% endblock %}
+</body>
